@@ -16,6 +16,10 @@ int length(int *p){
 		
 
 int* add(int *p, int N){							
+	if(p==NULL){
+		p=malloc(1);
+		p[0]=0;
+	}
 	p=realloc(p,sizeof(int)*(length(p)+2));					
 	*(p+length(p)+1)=0;
 	*(p+length(p))=N;
