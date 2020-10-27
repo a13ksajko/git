@@ -16,9 +16,8 @@ int length(int *p){
 		
 
 int* add(int *p, int N){							
-	if(p==NULL){
-		p=malloc(1);
-		p[0]=0;
+	if(!p){
+		p=calloc(1,1);
 	}
 	p=realloc(p,sizeof(int)*(length(p)+2));					
 	*(p+length(p)+1)=0;
@@ -54,7 +53,7 @@ void NOKD(int a, int b, int flag){
 	A.px=delet(A.x);
 	B.px=delet(B.x);
 	int s1mple=((*(A.px+length(A.px)-1))>(*(B.px+length(B.px)-1)))?(*(A.px+length(A.px)-1)):(*(B.px+length(B.px)-1));
-	k=malloc(sizeof(int)*s1mple);
+	k=calloc(sizeof(int),s1mple);
 	for(int i=0; i<length(A.px); i++)printf("%d  ", *(A.px+i));
 	printf("\n");
 	for(int j=0; j<length(B.px); j++)printf("%d  ", *(B.px+j));
